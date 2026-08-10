@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Rama Lana Komara</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header id="home">
+      <div class="container">
+        <p class="logo">Rama Lana Komara</p>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav>
+          <ul class="nav">
+            <li><a class="navlist" href="../index.html">Home</a></li>
+            <li><a class="navlist" href="./about.html">About</a></li>
+            <li><a class="navlist" href="./project.html">Projects</a></li>
+            <li><a class="navlist" href="./experience.html">Experience</a></li>
+            <li><a class="navlist active" href="./contact.html">Contact</a></li>
+            <li><a class="navlist" href="">Hire Me</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <p class="orangetext">GET IN TOUCH</p>
+          <h1>Contact Me</h1>
+          <p class="lead">
+            Have a project in mind or just want to say hello? Fill out the form
+            and I'll get back to you within 24 hours.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="container contact-layout">
+          <!-- ========== -->
+          <div class="form-card">
+            <h2 class="form-title">Send a Message</h2>
+            <!-- Fullname + Email -->
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name <span class="required">*</span></label>
+                  <input type="text" placeholder="Name" required />
+                </div>
+                <div class="form-group">
+                  <label>Email Address <span class="required">*</span></label>
+                  <input type="email" placeholder="you@example.com" required />
+                </div>
+              </div>
+
+              <!-- Phone + Subject -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" placeholder="+1 (415) 555-0100" />
+                </div>
+                <div class="form-group">
+                  <label>Subject <span class="required">*</span></label>
+                  <input type="text" placeholder="Project inquiry" required />
+                </div>
+              </div>
+
+              <!-- Country, full width sendiri -->
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" />
+              </div>
+
+              <!-- Message textarea -->
+              <div class="form-group">
+                <label>Message <span class="required">*</span></label>
+                <textarea
+                  rows="4"
+                  placeholder="Tell me about your project or what you need help with..."
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Preferred contact radio  -->
+              <div class="form-group">
+                <label>Preferred Contact Method</label>
+                <div class="choice-row">
+                  <label class="choice-item">
+                    <input type="radio" name="contact-method" checked />
+                    Email
+                  </label>
+                  <label class="choice-item">
+                    <input type="radio" name="contact-method" />
+                    Phone
+                  </label>
+                  <label class="choice-item">
+                    <input type="radio" name="contact-method" />
+                    Whatsapp
+                  </label>
+                </div>
+              </div>
+
+              <!-- Technologies: checkbox  -->
+              <div class="form-group">
+                <label>Technologies Interested In</label>
+                <div class="checkbox-grid">
+                  <label class="choice-item"
+                    ><input type="checkbox" /> React</label
+                  >
+                  <label class="choice-item"
+                    ><input type="checkbox" /> Node.js</label
+                  >
+                  <label class="choice-item"
+                    ><input type="checkbox" /> Python</label
+                  >
+                  <label class="choice-item"
+                    ><input type="checkbox" /> TypeScript</label
+                  >
+                  <label class="choice-item"
+                    ><input type="checkbox" /> React Native</label
+                  >
+                  <label class="choice-item"
+                    ><input type="checkbox" /> Vue.js</label
+                  >
+                  <label class="choice-item"
+                    ><input type="checkbox" /> Django</label
+                  >
+                  <label class="choice-item"
+                    ><input type="checkbox" /> Express.js</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-send">Send Message</button>
+                <button type="reset" class="btn-reset">Reset Form</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-sidebar">
+            <!-- Office Information -->
+            <div class="sidebar-card">
+              <h3>Office Information</h3>
+
+              <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                  <p class="info-label">Location</p>
+                  <p class="info-value">Jakarta,ID</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <span class="info-icon">✉️</span>
+                <div>
+                  <p class="info-label">Email</p>
+                  <p class="info-value info-link">rlanakomara7@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <span class="info-icon">📞</span>
+                <div>
+                  <p class="info-label">Phone</p>
+                  <p class="info-value">089614238447</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <span class="info-icon">🕒</span>
+                <div>
+                  <p class="info-label">Hours</p>
+                  <p class="info-value">Mon - Fri, 9 AM - 6 PM PST</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Find Me Online -->
+            <div class="sidebar-card">
+              <h3>Find Me Online</h3>
+              <ul class="social-list">
+                <li>
+                  <span>GitHub</span>
+                  <a href="https://github.com/rlanakomara7">@rlanakomara7 →</a>
+                </li>
+                <li>
+                  <span>LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/rama-lana-komara/"
+                    >Rama Lana →</a
+                  >
+                </li>
+                <li>
+                  <span>Instagram</span>
+                  <a href="https://www.instagram.com/ramalana.k/"
+                    >@ramalana.k →</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Location highlight -->
+            <div class="sidebar-card location-card">
+              <div class="location-pin">📍</div>
+              <p class="location-city">Jakarta, ID</p>
+              <p class="location-country">Indonesia</p>
+              <p class="location-coord">6.2088° S, 106.8456° E</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="your">
+          <h3>Rama Lana Komara</h3>
+          <p>
+            Full-stack software developer based in Jakarta,ID. Building
+            thoughtful web experiences one commit at a time.
+          </p>
+          <ul class="SOCMED">
+            <li><a href="https://github.com/rlanakomara7">GitHub</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/rama-lana-komara/"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ramalana.k/">Instagram</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>QUICK LINKS</h3>
+          <ul class="quicklink">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./project.html">Projects</a></li>
+            <li><a href="./experience.html">Experience</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="contact">
+          <h3>CONTACT</h3>
+          <p>rlanakomara7@gmail.com</p>
+          <p>+62 896 1423-8447</p>
+          <p>Jakarta,ID 16820</p>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        <p>&copy; 2026 Rama Lana Komara. All right reserved.</p>
+        <a href="#home">Back to Top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
