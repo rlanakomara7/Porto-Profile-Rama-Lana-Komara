@@ -1380,13 +1380,14 @@ footer hr {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  /* background-color: #111827; */
+  margin-left: auto;
   width: 28px;
   height: 20px;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 999;
+  background: transparent;
 }
 
 .hamburger span {
@@ -1400,17 +1401,112 @@ footer hr {
     opacity 0.3s ease;
 }
 
-/* .hamburger.active span:nth-child9(1) {
-  transform: translateY(8.5px) rotate(45deg);
+/* ================= RESPONSIVE DESKTOP FIRST =================== */
+
+/* =======TABLET769px - 1024px =============== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  /* HERO */
+
+  .container-hero {
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .nama {
+    font-size: 42px;
+  }
+
+  .introduction {
+    max-width: 500px;
+  }
+
+  .profile {
+    width: 260px;
+  }
+
+  .stats {
+    gap: 25px;
+  }
+
+  /* ABOUT */
+
+  .about-story-grid {
+    gap: 50px;
+  }
+
+  .about-story-grid img {
+    width: 280px;
+  }
+
+  /* PROJECT */
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 30px;
+  }
+
+  /* EXPERIENCE HEADER */
+
+  .page-header.experience {
+    padding: 50px 50px;
+  }
+
+  /* CERTIFICATE */
+
+  .container-certificate {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* SKILLS */
+
+  .skill-grid {
+    column-gap: 30px;
+  }
+
+  /* CONTACT */
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* FOOTER */
+
+  footer .container {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 25px;
+  }
+
+  /* TESTIMONIAL */
+
+  .container-testi {
+    flex-wrap: wrap;
+  }
 }
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-8.5px) rotate(-45deg);
-} */
+
+/* ==== MOBILE <= 768px============ */
 
 @media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* ============HEADER=========== */
+
+  #home .container {
+    padding: 15px 20px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -1418,23 +1514,293 @@ footer hr {
   .nav {
     position: fixed;
     top: 0;
-    right: -100;
+    right: -100%;
     width: 260px;
-    height: 50vh;
-    background-color: #fff;
+    height: 100vh;
+
+    background-color: white;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 30px 24px 24px;
+
+    padding: 80px 24px 24px;
+
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+
     z-index: 1000;
   }
-  .section {
-    flex-direction: column; /* LANGKAH 1: ubah arah jadi vertikal */
+
+  .nav li {
+    width: 100%;
   }
-  .section > * {
-    width: 100%; /* LANGKAH 2: elemen jadi full lebar */
+
+  .navlist {
+    display: block;
+    width: 100%;
   }
-  .section {
-    text-align: center; /* LANGKAH 3: rata tengah (opsional, tergantung desain) */
+
+  .nav.active {
+    right: 0;
+  }
+
+  .navlist {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .navlist li {
+    width: 100%;
+  }
+
+  .navlist a {
+    display: block;
+    width: 100%;
+  }
+
+  /* =======HERO============ */
+
+  .container-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+    gap: 30px;
+  }
+
+  .nama {
+    font-size: 36px;
+  }
+
+  .fullstack {
+    font-size: 18px;
+  }
+
+  .introduction {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .btn-grup {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .profile {
+    width: 240px;
+  }
+
+  .profile-card {
+    padding: 30px 0;
+  }
+
+  .city {
+    top: 15px;
+    right: -10px;
+  }
+
+  .status {
+    bottom: 30px;
+    left: -10px;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  /* ======ABOUT============= */
+
+  .aboutme {
+    padding: 60px 20px;
+  }
+
+  .passionate {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .passionate-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .about-story {
+    padding: 60px 20px;
+  }
+
+  .about-story-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-story-grid img {
+    width: 250px;
+  }
+
+  /* =======SKILLS=========== */
+
+  .skills {
+    padding: 60px 20px;
+  }
+
+  .liskills {
+    gap: 10px;
+  }
+
+  .liskills li {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  /* =========PROJECT=========== */
+
+  .work {
+    padding: 60px 20px;
+  }
+
+  .articlemywork {
+    flex-direction: column;
+  }
+
+  .articlemywork article {
+    width: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    margin: 30px 20px;
+  }
+
+  .detail-list {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  /* =======EXPERIENCE========== */
+
+  .page-header.experience {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 50px 20px;
+  }
+
+  .page-header.experience .container {
+    text-align: left;
+  }
+
+  .download {
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .work-history {
+    padding: 60px 20px;
+  }
+
+  .container-certificate {
+    grid-template-columns: 1fr;
+  }
+
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ======TIMELINE====== */
+
+  .academicbg {
+    padding: 50px 20px;
+  }
+
+  .career {
+    padding: 50px 20px;
+  }
+
+  .timeline-item {
+    gap: 15px;
+  }
+
+  .timelinehead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* ===TESTIMONIAL========= */
+
+  .testimonial {
+    padding: 60px 20px;
+  }
+
+  .container-testi {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .client {
+    margin: 20px 10px;
+  }
+
+  /* ======TOGETHER======*/
+
+  .together {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  /* ========CONTACT======= */
+
+  .contact-section {
+    padding: 50px 20px 80px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .choice-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ======FOOTER========= */
+
+  footer {
+    padding: 50px 20px 30px;
+  }
+
+  footer .container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .SOCMED {
+    flex-wrap: wrap;
+  }
+
+  .copyright {
+    flex-direction: column;
+    gap: 10px;
   }
 }
