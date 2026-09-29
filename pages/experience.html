@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
     <title>Experience - Rama Lana Komara</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
@@ -237,7 +238,7 @@
         <div class="contact">
           <h3>CONTACT</h3>
           <p>rlanakomara7@gmail.com</p>
-          <p>+62 896 1423-8447</p>
+          <p><a href="tel:+6289614238447">+62 896 1423-8447</a></p>
           <p>Jakarta,ID 16820</p>
         </div>
       </div>
@@ -248,20 +249,11 @@
       </div>
     </footer>
     <script>
-      console.log("JS TERBACA");
-
       document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM READY");
-
         const hamburgerBtn = document.getElementById("hamburgerBtn");
         const nav = document.querySelector("nav");
 
-        console.log(hamburgerBtn);
-        console.log(nav);
-
         hamburgerBtn.addEventListener("click", function () {
-          console.log("BUTTON CLICK");
-
           nav.classList.toggle("active");
         });
       });
