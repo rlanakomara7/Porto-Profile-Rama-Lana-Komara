@@ -44,7 +44,13 @@
             My professional journey, credentials, and recognition.
           </p>
         </div>
-        <a class="download">&darr; Download Resume</a>
+        <a
+          class="download"
+          href="../assets/RamaLanaKomara.pdf"
+          download="RamaLanaKomara.pdf"
+        >
+          &darr; Download Resume
+        </a>
       </section>
 
       <section class="work-history">
@@ -241,5 +247,24 @@
         <a href="#home">Back to Top ↑</a>
       </div>
     </footer>
+    <script>
+      console.log("JS TERBACA");
+
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM READY");
+
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const nav = document.querySelector("nav");
+
+        console.log(hamburgerBtn);
+        console.log(nav);
+
+        hamburgerBtn.addEventListener("click", function () {
+          console.log("BUTTON CLICK");
+
+          nav.classList.toggle("active");
+        });
+      });
+    </script>
   </body>
 </html>

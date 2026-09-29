@@ -15,6 +15,7 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.8;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .container {
@@ -24,33 +25,26 @@ body {
   padding: 0 24px;
 }
 
-/* section ------------------------------------------------- */
-.hero {
-  padding: 80px 0;
-}
-
-.aboutme {
-  background: var(--secondary);
-  padding: 80px 0;
-}
-
-.skills {
-  padding: 80px 0;
-}
-
-.work {
-  background: var(--secondary);
-  padding: 80px 0;
-}
-
+/* ==========================================================
+   SECTION PADDING (umum)
+========================================================== */
+.hero,
+.aboutme,
+.skills,
+.work,
 .testimonial {
   padding: 80px 0;
+}
+
+.aboutme,
+.work {
+  background: var(--secondary);
 }
 
 footer {
   background: #111827;
   color: white;
-  padding: 80px 80px;
+  padding: 60px 8% 40px;
 }
 
 .orangetext {
@@ -63,10 +57,28 @@ footer {
   color: black;
 }
 
-/* header ------------------------------------------------- */
+.divider {
+  width: 40px;
+  border: none;
+  height: 4px;
+  background: #111827;
+  border-radius: 999px;
+  margin: 20px auto;
+}
+
+/* ==========================================================
+   HEADER / NAV
+========================================================== */
 header {
   box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary);
+  z-index: 1000;
 }
+
 #home .container {
   display: flex;
   justify-content: space-between;
@@ -93,23 +105,75 @@ header {
   border-radius: 7px;
   border-style: none;
   padding: 10px 15px;
+  color: #374151;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.nav li:last-child a {
-  background-color: black;
-  color: var(--primary);
+.navlist:visited {
+  color: #374151;
 }
 
 .navlist:hover {
   background-color: var(--third);
+  color: #111827;
 }
 
 .navlist.active {
   background-color: rgba(181, 191, 196, 0.7);
+  color: #111827;
   font-weight: bold;
 }
 
-/* hero ------------------------------------------------- */
+.nav li:last-child a {
+  background-color: #111827;
+  color: var(--primary);
+  white-space: nowrap;
+  padding: 10px 20px;
+}
+
+.nav li:last-child a:visited {
+  color: var(--primary);
+}
+
+.nav li:last-child a:hover {
+  background-color: #ff5f22;
+  color: var(--primary);
+}
+
+/* Hamburger (satu sumber kebenaran, tidak diulang) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  width: 28px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  z-index: 2000;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #111827;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
 .container-hero {
   max-width: 1200px;
   margin: 0 auto;
@@ -130,9 +194,6 @@ header {
   display: flex;
   gap: 40px;
   margin-top: 40px;
-}
-.aboutme {
-  padding: 50px 0;
 }
 
 .btn-grup {
@@ -182,11 +243,11 @@ header {
   display: inline-block;
   padding: 70px 0;
 }
+
 .city {
   position: absolute;
   top: 50px;
   right: -15px;
-
   background: white;
   padding: 5px 18px;
   border-radius: 15px;
@@ -203,22 +264,14 @@ header {
   border-radius: 15px;
 }
 
-/* aboutme ------------------------------------------------- */
-
+/* ==========================================================
+   ABOUT ME (home)
+========================================================== */
 .self {
   text-align: center;
   max-width: 550px;
   color: rgb(117, 117, 117);
   margin: 0 auto;
-}
-
-.divider {
-  width: 40px;
-  border: none;
-  height: 4px;
-  background: #111827;
-  border-radius: 999px;
-  margin: 20px auto;
 }
 
 .passionate {
@@ -231,6 +284,7 @@ header {
   text-align: center;
   margin-top: 40px;
 }
+
 .learn-more a {
   text-decoration: none;
   color: black;
@@ -243,28 +297,21 @@ header {
   padding: 30px;
   max-width: 350px;
   text-align: start;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  p {
-    color: rgb(117, 117, 117);
-  }
+  box-shadow: var(--shadow);
 }
 
-/* skills ------------------------------------------------- */
+.passionate-card p {
+  color: rgb(117, 117, 117);
+}
 
+/* ==========================================================
+   SKILLS (home)
+========================================================== */
 .technical {
   text-align: center;
   max-width: 650px;
   color: rgb(117, 117, 117);
   margin: 0 auto;
-}
-
-.divider {
-  width: 40px;
-  border: none;
-  height: 4px;
-  background: #111827;
-  border-radius: 999px;
-  margin: 20px auto;
 }
 
 #skills {
@@ -290,29 +337,14 @@ header {
   box-shadow: var(--shadow);
 }
 
-/* feautured my work project ------------------------------------------------- */
-
+/* ==========================================================
+   FEATURED WORK (home)
+========================================================== */
 .descmywork {
   text-align: center;
   max-width: 600px;
   color: rgb(117, 117, 117);
   margin: 0 auto;
-}
-
-.divider {
-  width: 40px;
-  border: none;
-  height: 4px;
-  background: #111827;
-  border-radius: 999px;
-  margin: 20px auto;
-}
-
-.imgproject {
-  width: 100%;
-  border-radius: 14px 14px 0 0;
-  height: 250px;
-  object-fit: cover;
 }
 
 .descmywork h2 {
@@ -321,7 +353,13 @@ header {
   font-size: 30px;
   line-height: 1;
 }
-/* ------------- Pakai Flex----------------- */
+
+.imgproject {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 .articlemywork {
   display: flex;
   justify-content: center;
@@ -338,7 +376,11 @@ header {
   box-shadow: var(--shadow);
   overflow: hidden;
   flex: 1;
-  border-radius: 14px;
+}
+
+.articlemywork article .imgproject {
+  border-radius: 14px 14px 0 0;
+  height: 250px;
 }
 
 .articlemywork article p {
@@ -350,7 +392,7 @@ header {
   padding: 0 15px;
 }
 
-article ul {
+.articlemywork article ul {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -365,7 +407,7 @@ article ul {
   padding: 0 10px;
   border-radius: 24px;
   background-color: var(--secondary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow);
 }
 
 .articlemywork article h3 {
@@ -385,8 +427,9 @@ article ul {
   box-shadow: var(--shadow);
 }
 
-/* testimonial ------------------------------------------------- */
-
+/* ==========================================================
+   TESTIMONIAL (home)
+========================================================== */
 .desctestimonial {
   text-align: center;
   max-width: 600px;
@@ -399,14 +442,6 @@ article ul {
   color: black;
   font-size: 30px;
   line-height: 1;
-}
-.divider {
-  width: 40px;
-  border: none;
-  height: 4px;
-  background: #111827;
-  border-radius: 999px;
-  margin: 20px auto;
 }
 
 .container-testi {
@@ -463,8 +498,9 @@ article ul {
   padding-left: 48px;
 }
 
-/* together ------------------------------------------------- */
-
+/* ==========================================================
+   TOGETHER (CTA)
+========================================================== */
 .together {
   background-color: rgb(2, 2, 2);
   height: 50vh;
@@ -473,11 +509,19 @@ article ul {
   margin: 0 auto;
   padding: 80px;
 }
+
 .together p {
   margin: 0 auto;
   font-size: small;
   font-weight: 400;
   max-width: 500px;
+}
+
+.together h2 {
+  margin: 6px 0 10px;
+  color: white;
+  font-size: 30px;
+  line-height: 1;
 }
 
 .together a {
@@ -486,24 +530,14 @@ article ul {
   display: inline-block;
   padding: 12px 28px;
   background-color: #ff5f22;
-  text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
   margin-top: 20px;
 }
-.together h2 {
-  margin: 6px 0 10px;
-  color: white;
-  font-size: 30px;
-  line-height: 1;
-}
 
-/* footer ------------------------------------------------- */
-footer {
-  padding: 60px 8% 40px;
-  align-items: center;
-}
-
+/* ==========================================================
+   FOOTER
+========================================================== */
 footer .container {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
@@ -531,6 +565,7 @@ footer h3 {
   margin: 0;
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .SOCMED li a {
@@ -577,6 +612,7 @@ footer hr {
 .copyright a {
   color: #94a3b8;
 }
+
 .copyright a {
   text-decoration: none;
 }
@@ -584,7 +620,6 @@ footer hr {
 /* =========================================================
    PAGE: ABOUT (/pages/about.html)
 ========================================================= */
-
 .page-header {
   background: var(--secondary);
   padding: 80px 0;
@@ -621,6 +656,7 @@ footer hr {
   font-weight: 300;
   font-size: 14px;
 }
+
 .about-story-grid {
   display: flex;
   align-items: center;
@@ -664,6 +700,13 @@ footer hr {
   margin: 40px auto 0;
 }
 
+.timeline-item {
+  display: flex;
+  gap: 24px;
+  padding-bottom: 32px;
+  position: relative;
+}
+
 .timeline-item:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -681,13 +724,6 @@ footer hr {
   background: #ff5f22;
   flex-shrink: 0;
   margin-top: 90px;
-}
-
-.timeline-item {
-  display: flex;
-  gap: 24px;
-  padding-bottom: 32px;
-  position: relative;
 }
 
 .timeline-content {
@@ -711,7 +747,6 @@ footer hr {
 
 .timeline-content p {
   margin-top: 6px;
-  padding:;
 }
 
 .eduyear {
@@ -719,10 +754,12 @@ footer hr {
   font-weight: 600;
   font-size: small;
 }
+
 .eduplace {
   color: #ff5f22;
   font-weight: bold;
 }
+
 .timelinehead {
   display: flex;
   justify-content: space-between;
@@ -742,10 +779,21 @@ footer hr {
 .career {
   padding: 50px 50px;
 }
+
 .experiencehead {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.experiencehead h3 {
+  font-size: 1.3em;
+}
+
+.experiencehead p {
+  background-color: var(--secondary);
+  box-shadow: var(--shadow);
+  font-size: 0.8em;
 }
 
 .experience-card {
@@ -754,14 +802,6 @@ footer hr {
   padding: 20px 20px;
   border-radius: 14px;
   margin: 30px;
-}
-.experiencehead h3 {
-  font-size: 1.3em;
-}
-.experiencehead p {
-  background-color: var(--secondary);
-  box-shadow: var(--shadow);
-  font-size: 0.8em;
 }
 
 .loct {
@@ -820,7 +860,6 @@ footer hr {
   height: 6px;
   background: #9baeca;
   border-radius: 999px;
-  /* overflow: hidden; */
 }
 
 .skill-fill {
@@ -851,7 +890,6 @@ footer hr {
 /* =========================================================
    PAGE: My Projects (/pages/project.html)
 ========================================================= */
-
 .detail-list {
   display: flex;
   justify-content: center;
@@ -859,6 +897,7 @@ footer hr {
   list-style: none;
   margin-top: 40px;
   margin-bottom: 40px;
+  scroll-margin-top: 100px;
 }
 
 .filter-btn {
@@ -889,18 +928,13 @@ footer hr {
   background: var(--primary);
   border-radius: 14px;
   box-shadow: var(--shadow);
-}
-
-.imgproject {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+  overflow: hidden;
 }
 
 .project-body {
   display: flex;
   flex-direction: column;
-  /* flex: 1; */
+  flex: 1;
   padding: 20px;
 }
 
@@ -977,7 +1011,6 @@ footer hr {
 /* =========================================================
    PAGE: My Experience (/pages/experience.html)
 ========================================================= */
-
 .page-header.experience {
   display: flex;
   justify-content: space-between;
@@ -1160,7 +1193,6 @@ footer hr {
 /* =========================================================
    PAGE: Contact (/pages/contact.html)
 ========================================================= */
-
 .contact-section {
   padding: 60px 0 100px;
 }
@@ -1172,7 +1204,6 @@ footer hr {
   align-items: start;
 }
 
-/* ===== FORM CARD ===== */
 .form-card {
   background: var(--primary);
 }
@@ -1267,7 +1298,6 @@ footer hr {
   cursor: pointer;
 }
 
-/* ===== SIDEBAR ===== */
 .contact-sidebar {
   display: flex;
   flex-direction: column;
@@ -1374,47 +1404,56 @@ footer hr {
   font-size: 12px;
 }
 
-/* --------------- Hamburger -------------------- */
+/* ================================================================
+   RESPONSIVE (Desktop First)
+================================================================ */
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: auto;
-  width: 28px;
-  height: 20px;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 999;
-  background: transparent;
-}
-
-.hamburger span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #111827;
-  border-radius: 2px;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-/* ================= RESPONSIVE DESKTOP FIRST =================== */
-
-/* =======TABLET769px - 1024px =============== */
-
+/* ---------- TABLET 769px - 1024px ---------- */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hamburger {
     display: flex;
   }
 
+  /* Nav disembunyikan default, hanya tampil saat hamburger di-klik
+     (mencegah hamburger dan nav horizontal muncul bersamaan) */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+    z-index: 1500;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 90px 25px 20px;
+    margin: 0;
+  }
+
+  .nav li {
+    width: 100%;
+    list-style: none;
+  }
+
+  .navlist {
+    display: block;
+    width: 100%;
+  }
+
   .container {
     padding: 0 30px;
   }
-
-  /* HERO */
 
   .container-hero {
     padding: 40px 30px;
@@ -1437,8 +1476,6 @@ footer hr {
     gap: 25px;
   }
 
-  /* ABOUT */
-
   .about-story-grid {
     gap: 50px;
   }
@@ -1447,62 +1484,46 @@ footer hr {
     width: 280px;
   }
 
-  /* PROJECT */
-
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
     margin: 30px;
   }
 
-  /* EXPERIENCE HEADER */
-
   .page-header.experience {
     padding: 50px 50px;
   }
-
-  /* CERTIFICATE */
 
   .container-certificate {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* SKILLS */
-
   .skill-grid {
     column-gap: 30px;
   }
-
-  /* CONTACT */
 
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  /* FOOTER */
-
   footer .container {
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 25px;
   }
-
-  /* TESTIMONIAL */
 
   .container-testi {
     flex-wrap: wrap;
   }
 }
 
-/* ==== MOBILE <= 768px============ */
-
+/* ---------- MOBILE <= 768px ---------- */
 @media (max-width: 768px) {
   .container {
     width: 100%;
     padding: 0 20px;
   }
 
-  /* ============HEADER=========== */
-
+  /* HEADER / NAV */
   #home .container {
     padding: 15px 20px;
   }
@@ -1511,58 +1532,45 @@ footer hr {
     display: flex;
   }
 
-  .nav {
+  nav {
     position: fixed;
     top: 0;
     right: -100%;
     width: 260px;
     height: 100vh;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+    z-index: 1500;
+  }
 
-    background-color: white;
+  nav.active {
+    right: 0;
+  }
+
+  .nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    padding: 80px 24px 24px;
-
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
-
-    z-index: 1000;
+    gap: 20px;
+    padding: 90px 25px 20px;
+    margin: 0;
   }
 
   .nav li {
     width: 100%;
+    list-style: none;
   }
 
   .navlist {
     display: block;
     width: 100%;
+    padding: 12px;
   }
 
-  .nav.active {
-    right: 0;
-  }
-
-  .navlist {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%;
-  }
-
-  .navlist li {
-    width: 100%;
-  }
-
-  .navlist a {
-    display: block;
-    width: 100%;
-  }
-
-  /* =======HERO============ */
-
+  /* HERO */
   .container-hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
     padding: 50px 20px;
     gap: 30px;
@@ -1587,7 +1595,7 @@ footer hr {
   }
 
   .profile {
-    width: 240px;
+    width: 230px;
   }
 
   .profile-card {
@@ -1610,12 +1618,16 @@ footer hr {
     flex-wrap: wrap;
   }
 
-  /* ======ABOUT============= */
-
-  .aboutme {
-    padding: 60px 20px;
+  /* SECTIONS */
+  .hero,
+  .aboutme,
+  .skills,
+  .work,
+  .testimonial {
+    padding: 50px 20px;
   }
 
+  /* ABOUT ME */
   .passionate {
     flex-direction: column;
     align-items: center;
@@ -1639,12 +1651,7 @@ footer hr {
     width: 250px;
   }
 
-  /* =======SKILLS=========== */
-
-  .skills {
-    padding: 60px 20px;
-  }
-
+  /* SKILLS */
   .liskills {
     gap: 10px;
   }
@@ -1659,13 +1666,16 @@ footer hr {
     gap: 25px;
   }
 
-  /* =========PROJECT=========== */
-
-  .work {
-    padding: 60px 20px;
+  /* PROJECT / WORK */
+  .articlemywork,
+  .project-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+    margin: 30px 0;
   }
 
   .articlemywork {
+    display: flex;
     flex-direction: column;
   }
 
@@ -1673,9 +1683,8 @@ footer hr {
     width: 100%;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
-    margin: 30px 20px;
+  .imgproject {
+    height: 220px;
   }
 
   .detail-list {
@@ -1684,12 +1693,10 @@ footer hr {
     padding: 0 20px;
   }
 
-  /* =======EXPERIENCE========== */
-
+  /* EXPERIENCE */
   .page-header.experience {
     flex-direction: column;
     align-items: flex-start;
-
     padding: 50px 20px;
   }
 
@@ -1706,6 +1713,14 @@ footer hr {
     padding: 60px 20px;
   }
 
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .work-table {
+    min-width: 700px;
+  }
+
   .container-certificate {
     grid-template-columns: 1fr;
   }
@@ -1714,8 +1729,7 @@ footer hr {
     grid-template-columns: 1fr;
   }
 
-  /* ======TIMELINE====== */
-
+  /* TIMELINE */
   .academicbg {
     padding: 50px 20px;
   }
@@ -1734,12 +1748,7 @@ footer hr {
     gap: 8px;
   }
 
-  /* ===TESTIMONIAL========= */
-
-  .testimonial {
-    padding: 60px 20px;
-  }
-
+  /* TESTIMONIAL */
   .container-testi {
     flex-direction: column;
     align-items: center;
@@ -1748,27 +1757,27 @@ footer hr {
   .testimonial-card {
     width: 100%;
     max-width: 380px;
+    height: auto;
   }
 
   .client {
     margin: 20px 10px;
   }
 
-  /* ======TOGETHER======*/
-
+  /* TOGETHER */
   .together {
     height: auto;
     padding: 60px 20px;
   }
 
-  /* ========CONTACT======= */
-
+  /* CONTACT */
   .contact-section {
     padding: 50px 20px 80px;
   }
 
   .contact-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .form-row {
@@ -1784,15 +1793,19 @@ footer hr {
     gap: 10px;
   }
 
-  /* ======FOOTER========= */
+  input,
+  textarea {
+    width: 100%;
+  }
 
+  /* FOOTER */
   footer {
     padding: 50px 20px 30px;
   }
 
   footer .container {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 30px;
   }
 
   .SOCMED {
@@ -1801,6 +1814,13 @@ footer hr {
 
   .copyright {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+  }
+}
+
+/* ---------- DESKTOP: batasan tambahan project-grid ---------- */
+@media (max-width: 1000px) and (min-width: 769px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
